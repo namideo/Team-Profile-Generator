@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/namideo/Team-Profile-Generator#readme",
   "dependencies": {
+    "handlebars": "^4.7.7",
     "inquirer": "^8.2.1"
   }
 }

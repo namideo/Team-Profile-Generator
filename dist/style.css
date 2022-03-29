@@ -1,0 +1,23 @@
+* {
+    box-sizing: border-box;
+}
+
+header {
+    background-color: rgb(245, 103, 103);
+    height: 75px;
+}
+
+.navbar-brand {
+    color: white;
+    font-size: 30px;
+}
+
+.card {
+    width: 400px;
+    border-radius: 15px;
+    margin: 20px;
+}
+
+.card-header {
+    background-color: rgb(109, 109, 252);
+}
