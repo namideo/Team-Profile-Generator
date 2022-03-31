@@ -20,4 +20,3 @@ There is also test code written for each section within the application.
 * The information is then stored and created in an output.html file, where you can view your team profile on a webpage. 
 
 ![37E6A52B-969C-416E-B91F-B4898C723D08](https://user-images.githubusercontent.com/94868925/161124509-7d449ef9-c3fc-475b-9826-eba4bdf10e44.png)
-
