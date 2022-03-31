@@ -1,7 +1,7 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
 
-const generateHTML = require('./src/generateHTML');
+const generateHTML = require('./generateHTML');
 
 const Manager = require('./lib/Manager');
 const Engineer = require('./lib/Engineer');
@@ -21,7 +21,7 @@ const addManager = () => {
         },
         {
             type: 'input',
-            name: 'ID',
+            name: 'id',
             message: 'Input manager Id'
         },
         {
@@ -36,9 +36,8 @@ const addManager = () => {
     ])
 
     .then(response => {
-        let manager = new Manager(response.name, response.ID, response.email, response.officeNumber);
+        let manager = new Manager(response.name, response.id, response.email, response.officeNumber);
         team.push(manager)
-        addEmployee()
     })
 
 };
@@ -55,11 +54,11 @@ const addManager = () => {
         {
             type: 'input',
             name: 'name',
-            message: 'Employee name.'
+            message: 'Employee name'
         },
         {
             type: 'input',
-            name: 'ID',
+            name: 'id',
             message: 'Input Id'
         },
         {   
@@ -90,9 +89,9 @@ const addManager = () => {
         .then(function(response) {
             let newMember;
             if (response.employee === "Engineer") {
-                newMember = new Engineer(response.name, response.ID, response.email, response.github);
+                newMember = new Engineer(response.name, response.id, response.email, response.github);
             } else if (response.employee === "Intern") {
-                newMember = new Intern(response.name, response.ID, response.email, response.school);
+                newMember = new Intern(response.name, response.id, response.email, response.school);
             }
             team.push(newMember);
 
@@ -105,10 +104,11 @@ const addManager = () => {
     };
 
     function init() {
-        addManager()   
+        addManager()
+        .then(addEmployee)
 
             .then(() => {
-                fs.writeFileSync("output.html", generateHTML("dist/index.html", team))
+                fs.writeFileSync("output.html", generateHTML(team))
             }) 
             
             .catch((error) => {

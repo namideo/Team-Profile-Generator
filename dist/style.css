@@ -13,11 +13,11 @@ header {
 }
 
 .card {
-    width: 400px;
     border-radius: 15px;
     margin: 20px;
 }
 
 .card-header {
-    background-color: rgb(109, 109, 252);
+    color: white;
+    background-color: rgb(72, 72, 255);
 }
